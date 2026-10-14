@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "framework": null,
+  "functions": {
+    "api/**/*.php": { "runtime": "vercel-php@0.7.4" },
+    "*.php": { "runtime": "vercel-php@0.7.4" },
+    "admin/**/*.php": { "runtime": "vercel-php@0.7.4" }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/terong.png",
+      "dest": "/terong.png"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
