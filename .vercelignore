@@ -1,0 +1,7 @@
+.git
+.env
+*.sql
+*.backup
+*.md
+admin/config.local.php
+config.local.php

@@ -1,9 +1,13 @@
 {
   "version": 2,
   "functions": {
-    "*.php": { "runtime": "vercel-php@0.7.4" },
-    "admin/*.php": { "runtime": "vercel-php@0.7.4" },
-    "admin/**/*.php": { "runtime": "vercel-php@0.7.4" }
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4",
+      "includeFiles": [
+        "admin/**",
+        "*.php"
+      ]
+    }
   },
   "routes": [
     {
@@ -15,12 +19,8 @@
       "dest": "/terong.png"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "/admin/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/api/index.php"
     }
   ]
 }

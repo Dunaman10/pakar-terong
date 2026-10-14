@@ -41,7 +41,11 @@ if (!$koneksi) {
 
 // Atur SSL jika aktif (wajib untuk cloud DB seperti Aiven)
 if (!empty($cfg['ssl'])) {
-  mysqli_ssl_set($koneksi, NULL, NULL, NULL, NULL, NULL);
+  $ca = getenv('DB_SSL_CA') ?: ($_ENV['DB_SSL_CA'] ?? null);
+  mysqli_ssl_set($koneksi, NULL, NULL, $ca ?: NULL, NULL, NULL);
+  if (defined('MYSQLI_OPT_SSL_VERIFY_SERVER_CERT')) {
+    mysqli_options($koneksi, MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, !empty($ca));
+  }
 }
 
 $terhubung = @mysqli_real_connect(
