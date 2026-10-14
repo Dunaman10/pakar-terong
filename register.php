@@ -171,7 +171,7 @@ if (isset($_SESSION['user_id'])) {
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter" minlength="6" required>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 8 karakter" minlength="6" required>
       </div>
       <div class="mb-4">
         <label for="konfirmasi_password" class="form-label">Konfirmasi Password</label>
