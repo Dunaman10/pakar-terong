@@ -1,0 +1,14 @@
+# Matikan daftar isi folder
+Options -Indexes
+
+# Blokir file konfigurasi rahasia
+<FilesMatch "^(config\.local\.php|config\.example\.php)$">
+  Require all denied
+</FilesMatch>
+
+# Header keamanan dasar (aktif kalau modul headers tersedia)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

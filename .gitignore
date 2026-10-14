@@ -1,0 +1,26 @@
+# Environment & Local Configs
+admin/config.local.php
+config.local.php
+.env
+*.local
+
+# Sensitive & Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database Dumps (jika ada file backup pribadi)
+*.sql.gz
+*.backup
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
